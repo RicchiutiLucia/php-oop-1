@@ -8,20 +8,18 @@ vengono istanziati almeno due oggetti ‘Movie’ e stampati a schermo i valori 
 
 require __DIR__ . '/Models/Movie.php';
 
-$dragon_heart = new Movie("Dragon Heart", "Fantasy", "Rob Cohen");
+$allGenres = [ "Fantasy", "Action", "Adventure"];
+
+$dragon_heart = new Movie("Dragon Heart", $allGenres, "Rob Cohen");
 echo  '<h1>Titolo:</h1>'. $dragon_heart->get_title() . '<br>';
-echo '<h2>Genere:</h2>'. $dragon_heart->get_genre() . '<br>';
+echo '<h2>Genere:</h2>'. $dragon_heart->get_All_genres() . '<br>';
 echo '<h3>Diretto da:</h3>'. $dragon_heart->get_director() . '<br>';
 
-$nightmare = new Movie("Nightmare", "Horror","Wes Craven");
-echo  '<h1>Titolo:</h1>'. $nightmare->get_title() . '<br>';
-echo  '<h2>Genere:</h2>'. $nightmare->get_genre() . '<br>';
-echo '<h3>Diretto da:</h3>'.  $nightmare->get_director() . '<br>' ;
 
-$il_signore_degli_anelli = new Movie("Il signore degli anelli", "Fantasy","Peter Jackson");
-echo '<h1>Titolo:</h1>'.  $nightmare->get_title() . '<br>';
-echo '<h2>Genere:</h2>'.  $nightmare->get_genre() . '<br>';
-echo  '<h3>Diretto da:</h3>'. $nightmare->get_director() ;
+$il_signore_degli_anelli = new Movie("Il signore degli anelli", $allGenres,"Peter Jackson");
+echo '<h1>Titolo:</h1>'.  $il_signore_degli_anelli->get_title() . '<br>';
+echo '<h2>Genere:</h2>'. $il_signore_degli_anelli->get_All_genres() . '<br>';
+echo  '<h3>Diretto da:</h3>'. $il_signore_degli_anelli->get_director() ;
 
 
 

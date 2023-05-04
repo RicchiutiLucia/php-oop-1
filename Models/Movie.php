@@ -2,13 +2,13 @@
     class Movie
     {
         public $title;
-        public $genre;
+        public $genres;
         public $director;
 
-        function __construct($_title, $_genre,  $_director)
+        function __construct($_title, array $genres,  $_director)
         {
             $this->title = $_title;
-            $this->genre = $_genre;
+            $this->genres = $genres;
             $this->director = $_director;
         }
 
@@ -17,9 +17,15 @@
             return $this->title;
         }
 
-        function get_genre()
+        function get_All_genres()
         {
-            return $this->genre;
+            $generi='';
+
+            foreach($this->genres as $genre){
+                $generi .= $genre .'<br />';
+            }
+    
+            return $generi;
         }
         function get_director()
         {
